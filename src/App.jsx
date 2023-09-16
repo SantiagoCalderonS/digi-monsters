@@ -10,7 +10,7 @@ import Escenario from './components/escenario/escenario'
 function App() {
 
   return (
-    <div>
+    <div className="container">
       <NavBar/>
       <Routes>
         <Route path="/" element={<Principal/>}/>

@@ -23,21 +23,26 @@ const Principal = () => {
     },[])
 
     return(
-    <>
+    <div className={style.container}>
         <h1>{monster.nombre}</h1>
-        <ProgressBar now={ (monster.hp/10)*100} label={`${monster.hp}`} />
+        <ProgressBar now={ (monster.exp?.actual/monster.exp?.max)*100} label={`${(monster.exp?.actual/monster.exp?.max)*100}%`} />
             <div className={style.libro} >
-                <div className={style.container}>
+                <div className={style.imgContainer}>
                     <img src={monster.image} className={style.img}/>
                 </div>
                 <div name="stats" className={style.stats}>
-                    <h4>Vitalidad:{monster.hp}</h4>
-                    <h4>Fuerza:{monster.atq}</h4>
-                    <h4>Resistencia:{monster.def}</h4>
-                    <h4>Agilidad:{monster.vel}</h4>
+                    <div>
+                        <h3>{monster.descripcion}</h3>
+                    </div>
+                    <div className={style.numbers}>
+                        <h4>Vitalidad:{monster.hp}</h4>
+                        <h4>Fuerza:{monster.atq}</h4>
+                        <h4>Resistencia:{monster.def}</h4>
+                        <h4>Agilidad:{monster.vel}</h4>
+                    </div>   
                 </div>
             </div>
-    </>
+    </div>
     )
 }
 

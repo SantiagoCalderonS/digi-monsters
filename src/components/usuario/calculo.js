@@ -13,10 +13,14 @@ export const finalStats= (M)=>{
         nombre: M.monster.nombre,
         image: M.monster.image,
         descripcion: M.monster.descripcion,
-        hp: M.monster.hp + M.cuidados.own_hp,
-        atq:  M.monster.atq + M.cuidados.own_atq,
-        def:  M.monster.def + M.cuidados.own_def,
-        vel:  M.monster.vel + M.cuidados.own_vel,
+        exp:{
+            max: M.monster.exp_max,
+            actual: M.cuidados.own_exp
+        },
+        hp: (M.monster.hp + M.cuidados.own_hp)+(Math.ceil((M.cuidados.own_exp/M.monster.exp_max)*10)),
+        atq:  (M.monster.atq + M.cuidados.own_atq)+(Math.ceil((M.cuidados.own_exp/M.monster.exp_max)*10)),
+        def:  (M.monster.def + M.cuidados.own_def)+(Math.ceil((M.cuidados.own_exp/M.monster.exp_max)*10)),
+        vel:  (M.monster.vel + M.cuidados.own_vel)+(Math.ceil((M.cuidados.own_exp/M.monster.exp_max)*10)),
     }
 
     return newMonster

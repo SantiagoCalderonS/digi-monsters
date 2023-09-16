@@ -4,9 +4,8 @@
 }
 
 .barraLateral{
-    position: absolute;
+    position: fixed;
     left: 1%;
-    top: 5%;
-
+    top: 4%;
   }
   

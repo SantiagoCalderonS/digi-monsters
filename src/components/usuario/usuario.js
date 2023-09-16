@@ -18,7 +18,8 @@ export const usersMonsters= [
             own_hp: -3,
             own_atq: 5,
             own_def: 1,
-            own_vel: 9
+            own_vel: 9,
+            
         }
     },
     {
@@ -36,11 +37,12 @@ export const usersMonsters= [
             vel: 2
         },
         cuidados:{
-            own_exp: 23,
+            own_exp: 87,
             own_hp: 12,
             own_atq: 2,
             own_def: 7,
-            own_vel: -1
+            own_vel: -1,
+           
         }
     }
 ]
@@ -55,8 +57,11 @@ export const userObjets = [
             nombre: "pocion",
             img: "",
             uso:"cura",
-            valor: 3
-        }
+            valor: 3,
+            objetivo: "aliado"
+        },
+        posesion:2,
+        
     },
     {
         ID: 2,
@@ -66,7 +71,9 @@ export const userObjets = [
             nombre: "veneno",
             img: "",
             uso:"daña",
-            valor: -3
-        }
+            valor: -3,
+            objetivo: "aliado"
+        },
+        posesion:2,
     }
 ]

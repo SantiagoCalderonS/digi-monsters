@@ -14,8 +14,8 @@ const Criatura = ({criatura}) => {
   }
 
     return(
-        <Card style={{ width: '18rem' }} >
-        <Card.Img variant="top" src={criatura.image} />
+        <Card style={{ width: '18rem', display: "inline-block", margin: "30px"}} >
+        <Card.Img variant="top" src={criatura.image}  style={{height: "300px"}}/>
         <Card.Body>
           <Card.Title>{criatura.nombre}</Card.Title>
           <Card.Text>
