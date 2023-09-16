@@ -1,0 +1,12 @@
+.tablilla{
+    display: flex;
+    flex-direction: column;
+}
+
+.barraLateral{
+    position: absolute;
+    left: 1%;
+    top: 5%;
+
+  }
+  

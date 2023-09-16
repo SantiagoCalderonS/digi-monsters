@@ -1,0 +1,24 @@
+.libro{
+    display: inline-flex;
+    flex-direction: row;
+    grid-gap: 10%;
+    width: 90%;
+
+}
+
+.container{
+    width: 50%;
+}
+
+
+.stats{
+    text-align:left;
+}
+
+.stats h4{
+    margin-top: 30px;
+}
+
+.img{
+    width: 100%;
+}
