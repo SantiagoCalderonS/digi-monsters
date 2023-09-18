@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector} from "react-redux"
 import { plus, minus } from "../../redux/actions"
+import { userObjets } from "../usuario/usuario"
+import Objeto from "./objeto/objeto"
 
 const Bolsa = () => {
     const count = useSelector((state)=>state.counter)
@@ -17,9 +19,7 @@ const Bolsa = () => {
 
     return(
         <div>
-            <button name="+" onClick={oper}>+</button>
-            <button name="-" onClick={oper}>-</button>
-            <h1>{count}</h1>
+            {userObjets.map((Obj)=><Objeto objeto={Obj}/>)}
         </div>
     )
 }

@@ -55,7 +55,7 @@ export const userObjets = [
         id_objet:1,
         objet : {
             nombre: "pocion",
-            img: "",
+            img: "https://th.bing.com/th/id/R.b41ae2a3fc1457d06e939cbe25e82ff2?rik=Zx1dxylMDzFTeQ&pid=ImgRaw&r=0",
             uso:"cura",
             valor: 3,
             objetivo: "aliado"
@@ -69,7 +69,7 @@ export const userObjets = [
         id_objet:2,
         objet : {
             nombre: "veneno",
-            img: "",
+            img: "https://www.soyvisual.org/sites/default/files/styles/augmentative_resource_lightbox/public/images/photos/hal_0013.jpg?itok=Y4LCrPMV",
             uso:"daña",
             valor: -3,
             objetivo: "aliado"
@@ -77,3 +77,11 @@ export const userObjets = [
         posesion:2,
     }
 ]
+
+
+
+
+
+export const user_info = {
+    name: ""
+};
