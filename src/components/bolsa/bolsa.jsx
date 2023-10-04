@@ -1,21 +1,19 @@
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector} from "react-redux"
-import { plus, minus } from "../../redux/actions"
 import { userObjets } from "../usuario/usuario"
 import Objeto from "./objeto/objeto"
+import { setAllObjets } from "../../redux/actions"
 
 const Bolsa = () => {
-    const count = useSelector((state)=>state.counter)
+    const objets = useSelector((state)=>state.allObjets)
     const dispatch = useDispatch()
 
-    function oper (e) {
-        if(e.target.name === "+"){
-            dispatch(plus(1))
-        }else{
-            count > 0 && dispatch(minus(1))
+    useEffect(()=>{
+        if(objets.length === 0){
+            dispatch(setAllObjets(userObjets))
         }
+    },[])
         
-    }
 
     return(
         <div>

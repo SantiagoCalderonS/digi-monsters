@@ -13,14 +13,30 @@ export const finalStats= (M)=>{
         nombre: M.monster.nombre,
         image: M.monster.image,
         descripcion: M.monster.descripcion,
+        especie: M.monster.especie,
+        nivel: M.monster.nivel,
         exp:{
-            max: M.monster.exp_max,
-            actual: M.cuidados.own_exp
+            exp_max: M.monster.exp_max,
+            own_exp: M.cuidados.own_exp,
+            actual_exp: M.cuidados.own_exp/M.monster.exp_max
         },
-        hp: (M.monster.hp + M.cuidados.own_hp)+(Math.ceil((M.cuidados.own_exp/M.monster.exp_max)*10)),
-        atq:  (M.monster.atq + M.cuidados.own_atq)+(Math.ceil((M.cuidados.own_exp/M.monster.exp_max)*10)),
-        def:  (M.monster.def + M.cuidados.own_def)+(Math.ceil((M.cuidados.own_exp/M.monster.exp_max)*10)),
-        vel:  (M.monster.vel + M.cuidados.own_vel)+(Math.ceil((M.cuidados.own_exp/M.monster.exp_max)*10)),
+
+        hunger:{
+            hunger_max: M.monster.hunger_max,
+            own_hunger: M.cuidados.own_hunger,
+            actual_hunger: M.cuidados.own_hunger/M.monster.hunger_max
+        },
+
+        joy:{
+            joy_max: M.monster.joy_max,
+            own_joy: M.cuidados.own_joy,
+            actual_joy: M.cuidados.own_joy/M.monster.joy_max
+        },
+
+        hp:  Math.ceil((M.monster.hp + (M.monster.crecimiento.x_hp *  M.cuidados.own_exp/M.monster.exp_max)) * ((M.cuidados.own_hunger/M.monster.hunger_max + M.cuidados.own_joy/M.monster.joy_max)/2)) ,
+        atq: Math.ceil((M.monster.atq + (M.monster.crecimiento.x_atq *  M.cuidados.own_exp/M.monster.exp_max)) * ((M.cuidados.own_hunger/M.monster.hunger_max + M.cuidados.own_joy/M.monster.joy_max)/2)) ,
+        def: Math.ceil((M.monster.def + (M.monster.crecimiento.x_def *  M.cuidados.own_exp/M.monster.exp_max)) * ((M.cuidados.own_hunger/M.monster.hunger_max + M.cuidados.own_joy/M.monster.joy_max)/2)) ,
+        vel: Math.ceil((M.monster.vel + (M.monster.crecimiento.x_vel *  M.cuidados.own_exp/M.monster.exp_max)) * ((M.cuidados.own_hunger/M.monster.hunger_max + M.cuidados.own_joy/M.monster.joy_max)/2)) ,
     }
 
     return newMonster

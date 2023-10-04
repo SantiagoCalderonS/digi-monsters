@@ -37,10 +37,10 @@ export const setAllObjets= (O)=>{
    }
 }
 
-export const plus= (D)=>{
+export const puTObjetOnTarget= (P)=>{
     return {
-        type: "+",
-        payload: D
+        type: "PUT_OBJET_ON_MONSTER",
+        payload: P
     }
 }
 

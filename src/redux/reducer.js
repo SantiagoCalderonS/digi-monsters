@@ -3,7 +3,8 @@ const initialState= {
     show: false,
     principal: {},
     allMonsters: [],
-    allObjets: []
+    allObjets: [],
+    objectXtarget: {},
     }
 
 export default function reducer ( state = initialState, actions) {
@@ -19,7 +20,10 @@ export default function reducer ( state = initialState, actions) {
         case 'SET_ALLOBJETS':
             return {...state, allObjets: actions.payload };
 
-        case '+':
+        case 'PUT_OBJET_ON_MONSTER':
+            return {...state, objectXtarget: actions.payload };
+
+        case '':
             return { ...state, counter: state.counter + actions.payload };
       
         case '-':
